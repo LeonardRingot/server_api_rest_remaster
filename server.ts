@@ -13,7 +13,7 @@ import { ApiException } from './types/exception'
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
 app.use(express.json())
-sequelize.initDb()
+//sequelize.initDb()
 
 const port = process.env.PORT || 5000
 app.listen(port, () => {

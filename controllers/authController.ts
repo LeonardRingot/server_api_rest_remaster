@@ -62,7 +62,7 @@ authController.post('/login', async (req, res) => {
                         }, { where: { UserId: user.id } })
                     }
                 })
-                return res.status(200).json({ successfullLogin: true, UserId: user.id, accessToken: accessToken, refreshToken: refreshToken })
+                return res.status(200).json({ successfullLogin: true, id: user.id, accessToken: accessToken, refreshToken: refreshToken })
             } else {
                 message = "Erreur du mot de passe."
 

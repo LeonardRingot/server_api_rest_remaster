@@ -57,11 +57,11 @@ module.exports = (sequelize : Sequelize, dataTypes : typeof DataTypes) => {
             }
         }, 
         birthday: {
-            type: dataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull: false,
             validate: {
-                notNull: { msg : concatRequiredMessage('Date of birth')},
-                notEmpty : { msg : concatRequiredMessage('Date of birth')}
+                notNull: { msg: concatRequiredMessage('birthday date') },
+                notEmpty: { msg: concatRequiredMessage('birthday date') }
             }
         },
         bio: {

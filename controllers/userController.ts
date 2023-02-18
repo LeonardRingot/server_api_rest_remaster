@@ -174,25 +174,25 @@ usersController.get('/:id', async (req, res) => {
   *         in: body
   *         required: true
   *         type: object
-  *         default: { "pseudo": "string","pwd":"string","prenom": "string","nom": "string","birthday": "date","email": "email","bio": "string" }
+  *         default: { "pseudo": "string","nom":"string","prenom": "string","email": "string","pwd": "string","birthday": "date","bio": "string" }
   *      responses:
   *        200:
   *          description: Update the user of given id.
   */
 usersController.put('/:id', async (req, res) => {
     const id = req.params.id;
-    const { pseudo, nom, prenom, birthday, bio, email } = req.body
+    const { pseudo, nom, prenom, email, birthday, bio } = req.body
     if (!req.body.pwd) return res.status(400).json({ passwordRequired: true, message: 'Besoin d\'un mot de passe.' })
 
     let hashedPassword = await bcrypt.hash(req.body.pwd, 10);
     User.update({
         pseudo : pseudo, 
-        pwd : hashedPassword, 
-        prenom : prenom, 
         nom : nom, 
-        birthday : birthday, 
-        bio : bio,
-        email : email
+        prenom : prenom, 
+        email : email, 
+        pwd : hashedPassword, 
+        birthday : birthday,
+        bio : bio
     }, {
         where: { id: id },
     })

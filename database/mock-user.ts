@@ -7,7 +7,7 @@ export const users : userTypes[] = [
       pseudo: "rthur",
       email: "arthur@r.fr",
       pwd: "$2b$10$NUOQNvbDfEO8EnvvRmI8oOhBjNPyARSE3H2Bya73s7U7wd7vkZGYm",
-      birthday: "1999-16-12",
+      birthday: new Date("2000-06-21"),
       bio: "a",
       
     },
@@ -17,7 +17,7 @@ export const users : userTypes[] = [
       pseudo: "eonard",
       email: "leonard@r.fr",
       pwd: "$2b$10$NUOQNvbDfEO8EnvvRmI8oOhBjNPyARSE3H2Bya73s7U7wd7vkZGYm",
-      birthday: "2000-06-20",
+      birthday: new Date("2000-06-21"),
       bio: "b",
       
     }

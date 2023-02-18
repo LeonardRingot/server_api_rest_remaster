@@ -5,7 +5,7 @@ export interface userTypes{
     pwd : string;
     email : string;
     bio : string;
-    birthday : string;
+    birthday : Date;
 }
 
 export interface userId extends userTypes {
